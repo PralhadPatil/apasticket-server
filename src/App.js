@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header';
+import Footer from './components/footer';
+import Content from './components/content';
+import Flow from './components/flow';
 
 class App extends Component {
+  state = {
+    modalVisible : false
+  }
+  toggleModal = () => {
+    this.setState({
+      modalVisible : !this.state.modalVisible
+    });
+  }
+
   render() {
+    
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header></Header>
+        <Content posterClickHandler={this.toggleModal}></Content>
+        <Footer></Footer>
+        <Flow visible={this.state.modalVisible} closeHandler={this.toggleModal} ></Flow>
       </div>
     );
   }
