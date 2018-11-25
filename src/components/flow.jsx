@@ -20,7 +20,6 @@ export default class Flow extends React.Component {
     }
 
     closeHandler = () => {
-        console.log("Closing");
         this.props.closeHandler();
         this.setState({
             visibleScreen : 1
