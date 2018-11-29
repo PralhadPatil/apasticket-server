@@ -4,6 +4,7 @@ import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import screenLayout from '../resources/screens/Scala-Cinema-Kino1.svg';
 
+
 export default class ControlledCarousel extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -31,6 +32,11 @@ export default class ControlledCarousel extends React.Component {
             showPeopleCount: false,
             showPlaces: true
         });
+    }
+
+    onPayClick = () => {
+        window.location.href = "/pay"
+        this.props.closeHandler();
     }
 
     render() {
@@ -128,7 +134,7 @@ export default class ControlledCarousel extends React.Component {
                                         </tr>
                                     </tbody>
                                 </Table>
-                                <Button bsStyle="danger"> Pay </Button>
+                                <Button bsStyle="danger" onClick={this.onPayClick}> Pay </Button>
 
                             </div>
                         </div>

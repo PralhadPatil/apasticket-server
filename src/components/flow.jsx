@@ -34,7 +34,7 @@ export default class Flow extends React.Component {
                         <Modal.Title>Book Tickets</Modal.Title>
                     </Modal.Header>
                     <Modal.Body style={styles.container}>
-                        <FlowContent currentScreen={this.state.visibleScreen}></FlowContent>
+                        <FlowContent currentScreen={this.state.visibleScreen} closeHandler={this.closeHandler}></FlowContent>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={this.closeHandler} bsStyle="danger">Cancel</Button>
